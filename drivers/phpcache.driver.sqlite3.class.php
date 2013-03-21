@@ -73,7 +73,7 @@
 		}
 		
 		public function create_table($table_name) {
-			$this->exec("
+			$this->query("
 				CREATE TABLE $table_name
 				(
 					PHPCache_key VARCHAR(41) PRIMARY KEY,
@@ -81,7 +81,7 @@
 					PHPCache_expires INTEGER
 				)
 			");
-			$this->exec("
+			$this->query("
 				CREATE INDEX 
 					PHPCache_PHPCache_expires
 				ON 
